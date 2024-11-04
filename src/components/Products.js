@@ -23,7 +23,7 @@ export default function Products({ isProductRevealed, componentToReveal }) {
             "name": "ethical licensing document",
             "link": ""
         },
-        "link": "",
+        "link": "https://rememberjerjourney.com/",
         "mainImage": RHJ,
         "wireframeImage": RHJWireframe,
         "feautures": [{ "title": "Culturally-Inclusive Design System", "description": "Indigenous patterns as foundational elements in a modern, responsive UI framework. This has inspired us to create a comprehensive digital archive of these designs, complete with contextual information, downloadable resources and ethical licensing. " }, { "title": "Parallax Pattern Scrolling", "description": "Parallax effects that seamlessly blend the pattern with modern web elements as users scroll." }, { "title": "Live Chat Integration", "description": "Custom real-time, AI-powered chatbots for instant customer support and enhanced user interactions." }]

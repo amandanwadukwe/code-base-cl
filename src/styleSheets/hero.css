@@ -183,6 +183,10 @@ img{
   
   /* Medium devices (landscape tablets, 768px and up) */
   @media only screen and (min-width: 768px) {
+    .main-product-container{
+        margin:0;
+        margin-bottom:2rem;
+    }
     .value{
         width:15vw;
     }

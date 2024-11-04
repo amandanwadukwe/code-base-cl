@@ -6,12 +6,19 @@ import RHJWireframe from "../resources/rhj-wireframe.png";
 import code from "../resources/code.svg";
 import process from "../resources/process.svg";
 import value from "../resources/value.svg";
-
+import { Link } from "react-router-dom";
 export default function Hero({ isHomeRevealed, componentToReveal }) {
 
     useEffect(()=>  {
         componentToReveal('home');
     },[componentToReveal])
+
+    const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      };
     
   
 
@@ -24,7 +31,7 @@ return(
                     <p>A movement towards inclusivity, where technology and tradition meet to create something truly unique. By aiming normalizing indeginous designs, </p>
                 </div>
                 <div className={`right reveal ${isHomeRevealed ? "active" : ""}`}>
-                    <button className="primary-btn" type="button">About</button>
+                <Link to="/products" onClick={scrollToTop}><button className="primary-btn" type="button">Read more</button></Link>
                 </div>
             </div>
             {/* <div className="hero-images-container">
@@ -46,7 +53,7 @@ return(
                     <p><strong>Live Chat Integration</strong></p>
                     <p>Custom real-time, AI-powered chatbots for instant customer support and enhanced user interactions. </p>
                 </div>
-                <button className={`primary-btn reveal ${isHomeRevealed ? "active" : ""}`} type="button">Visit</button>
+                {/* <a href='https://rememberjerjourney.com/' className={`primary-btn reveal ${isHomeRevealed ? "active" : ""}`} target='_blank'>Visit</a> */}
                 </div>
             </div>
             <div className="values-container">
