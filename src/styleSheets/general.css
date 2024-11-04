@@ -166,9 +166,10 @@ input, textarea{
     align-items:center;
   }
 @media only screen and (min-width: 768px) {
- /* .container{
-    min-height:80vh;
- } */
+  
+ .container{
+  margin:1rem 5rem;
+ }
   form{
     display:flex;
     flex-wrap:wrap;

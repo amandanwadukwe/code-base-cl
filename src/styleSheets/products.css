@@ -48,10 +48,37 @@
     align-items: center;
     justify-content:center;
 }
+
+@media only screen and (min-width: 768px) {
+    .feature-in-product-page{
+        display:none;
+    }
+    .wireframe-in-product{
+        width:100%;
+        display:flex;
+    }
+
+    .wireframe-in-product img{
+        width:60%;
+        display:flex;
+    } 
+}
 @media only screen and (min-width: 992px) {
     .product-wireframe{
         width:50%;
     }
+    .feature-in-product-page{
+        display:none;
+    }
+    .wireframe-in-product{
+        width:100%;
+        display:flex;
+    }
+
+    .wireframe-in-product img{
+        width:60%;
+        display:flex;
+    } 
 }
 
 

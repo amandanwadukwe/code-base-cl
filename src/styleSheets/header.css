@@ -92,7 +92,9 @@ header{
   @media only screen and (min-width: 600px) {
     /* body {background: green;} */
     
-    header, .primary-nav{
+    /* header, */
+    
+    .primary-nav{
         width:70vw;
     }
   }
@@ -100,9 +102,17 @@ header{
   /* Medium devices (landscape tablets, 768px and up) */
   @media only screen and (min-width: 768px) {
     /* body {background: blue;} */
-
+footer{
+    padding:3rem 5rem;
+    justify-content: center;
+    align-items: center;
+}
+footer .right{
+    justify-content: space-between;
+    align-items: flex-start;
+}
     header{
-        padding:1rem 0;
+        padding:5rem 0;
     }
 
     .small-screen-header{

@@ -37,7 +37,7 @@ export default function Footer( { logo } ){
                         <li><a href="">About us</a></li>
                         
                         <li><a href="/support">Support</a></li>
-                        <li><a href="../resources/AADA Ethical Licensing .pdf" download="../resources/AADA Ethical Licensing .pdf">Ethical Licencing Policy</a></li>
+                        <li><a href="/AADA Ethical Licensing.pdf" download="/AADA Ethical Licensing.pdf">Ethical Licencing Policy</a></li>
                     </ul>
                 </div>
             </div>

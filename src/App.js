@@ -17,6 +17,7 @@ import Support from "./components/Support";
 import Products from "./components/Products";
 import Footer from "./components/Footer";
 import Logo from "./resources/logo.svg";
+import Logo2 from "./resources/logo2.svg";
 import About from './components/About';
 
 
@@ -72,7 +73,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-            <Header logo={Logo} />
+            <Header logo={Logo2} />
             <Routes>
                 <Route path="/" element={<Hero isHomeRevealed={isHomeRevealed} componentToReveal={componentToReveal} />} />
                 <Route path="/contact" element={<Contact isContactRevealed={isContactRevealed} componentToReveal={componentToReveal} />} />

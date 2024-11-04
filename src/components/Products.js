@@ -29,7 +29,7 @@ export default function Products({ isProductRevealed, componentToReveal }) {
         "feautures": [{ "title": "Culturally-Inclusive Design System", "description": "Indigenous patterns as foundational elements in a modern, responsive UI framework. This has inspired us to create a comprehensive digital archive of these designs, complete with contextual information, downloadable resources and ethical licensing. " }, { "title": "Parallax Pattern Scrolling", "description": "Parallax effects that seamlessly blend the pattern with modern web elements as users scroll." }, { "title": "Live Chat Integration", "description": "Custom real-time, AI-powered chatbots for instant customer support and enhanced user interactions." }]
     }]
     return (
-        <div className="products-container container">
+        <div className=" container">
             <p className={`primary-header reveal ${isProductRevealed ? "active" : ""}`}>Products</p>
             <div className="products">
             {products.map(product => {
@@ -50,9 +50,9 @@ export default function Products({ isProductRevealed, componentToReveal }) {
                                 {product.description.map(paragraph => <p>{paragraph}</p>)}
                             </div>
                         </div>
-                        <div className="product-wireframe">
-                        <img class="product-wireframe" src={product.wireframeImage} alt="" />
-            <div className="product-features-container" style={{backgroundColor:"transparent"}}>
+                        <div className="product-wireframe wireframe-in-product">
+                        <img class="product-wireframe wireframe-in-product" src={product.wireframeImage} alt="" />
+            <div className="product-features-container feature-in-product-page" style={{backgroundColor:"transparent"}}>
                 {product.feautures.map(feature => {
                     return <div className="product-feature">
                     <p className="tertiary-header">{feature.title}</p>
@@ -61,6 +61,18 @@ export default function Products({ isProductRevealed, componentToReveal }) {
                 })}
                 
                 </div>
+                <ul className="product-features-container-2" style={{backgroundColor:"transparent"}}>
+                {product.feautures.map(feature => {
+                    return <li >
+                       
+                            <div>
+                    <p className="tertiary-header">{feature.title}</p>
+                    <p>{feature.description}</p>
+                    </div>
+                    </li>
+                })}
+                
+                </ul>
                         </div>
                     </div>
                 </div>
