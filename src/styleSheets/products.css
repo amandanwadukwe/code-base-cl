@@ -1,0 +1,116 @@
+.product-container{
+    width:80vw;
+    /* margin:3rem 0; */
+    
+}
+
+.products{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items: center;
+}
+
+.product-details{
+    margin:3rem 0;
+}
+
+.product{
+    padding:1rem;
+}
+.product:hover{
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    transform:scale(1.05);
+    transition:all .5s ease-in-out; 
+}
+
+.product:hover > * {
+    color:#d47e0d !important;
+    cursor:default;
+}
+
+.product-overview, .product-details{
+    /* margin:3rem 0; */
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-overview > * {
+    width:100%;
+}
+
+.product-overview .right, .product-overview .left{
+    margin:1rem ;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+@media only screen and (min-width: 992px) {
+    .product-wireframe{
+        width:50%;
+    }
+}
+
+
+@media only screen and (min-width: 1100px) {
+    .product{
+        width:30vw
+    }
+    .product-overview > *{
+        width:auto;
+    }
+    /* .product-wireframe{
+        width:40%;
+    } */
+    .product-feature{
+        /* width:45%; */
+        /* max-height:30vw; */
+        position:relative;
+        top:-11rem;
+    }
+    .product-features-container{
+        max-width:45vw;
+        max-height:45vw;
+       gap:0;
+        /* display:flex; */
+    }
+
+    .product-features-container button{
+        position:relative;
+        top:-11rem;
+    }
+
+    .product-features-container > *{
+        transform:scale(.1)
+    }
+
+    .main-product-highlight-container{
+        margin-top:9rem;
+        
+    }
+
+    .home{
+        transform:scale(.8);
+        position:relative;
+        top:-8rem;
+    }
+    
+}
+
+
+@media only screen and (min-width: 1200px) {
+    .product-feature{
+        top:-3rem;
+    }
+
+    .main-product-highlight-container{
+        margin-top:4rem;
+        
+    }
+    .product-features-container button{
+        top:-3rem;
+    }
+}

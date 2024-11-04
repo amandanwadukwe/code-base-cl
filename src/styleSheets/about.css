@@ -1,0 +1,20 @@
+.about-container{
+    width:80vw;
+    margin:auto;
+}
+
+.value-details-container{
+    margin-top:5rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+@media only screen and (min-width: 768px) {
+    .value-details-container{
+        flex-direction: row;
+        align-items: flex-end;
+        gap:2rem;
+    }
+}

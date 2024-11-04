@@ -1,0 +1,231 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.primary-btn{
+    padding:1rem 2.5rem;
+    margin:1rem;
+    background-color: #022350;
+    color:white;
+    border-radius: 2vmax;
+    border:none;
+}
+
+.primary-btn:hover{
+    transform:scale(1.1);
+    background-color: black;
+    color:white;
+    transition:all .2s linear;
+}
+
+.main-product-container{
+    width:70vw;
+    height:auto;
+    margin:3rem 3rem auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    gap:3rem;
+    position:relative;
+    top:0;
+    left:0;
+    z-index:200;
+}
+
+
+.main-product-container .primary-btn{
+    position: relative;
+    bottom: 3rem;}
+
+.main-product-image{
+    width:100%
+}
+
+.hero-images-container{
+    width:70vw;
+    margin:auto;
+    
+}
+
+.hero-images-container img{
+    width:80%;
+    min-width:300px;
+    /* position:absolute;
+    top:10vh;
+    left:0; */
+}
+
+
+
+.hero-image-2{
+    /* background-color: green; */
+   
+    /* left:10vw !important; */
+    animation: enterScreen ease-in-out 1;
+    margin-left:10vw;
+    position:absolute;
+    top:10vh;
+    left:0;
+    z-index:0;
+}
+
+.hero-image-1{
+    animation: enterScreen ease-in-out 1.5s 1;
+    filter:opacity(0.8);
+    position:absolute;
+    top:10vh;
+    left:0;
+    z-index:1;
+}
+
+.main-product-highlight-container{
+    width:90vw;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    width: 100%;
+    margin: auto;
+}
+
+.value img{
+    width: 100%;
+    max-width:200px;
+    max-height: 22vh;
+    margin: auto;
+}
+
+.product-features-container, .values-container{
+    width:90vw;
+    background-color:#d3cccb;
+    padding:1rem;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.values-container{
+    background-color: white;
+    margin-top:5rem;
+}
+.product-feature, .value{
+    width:90%;
+    /* max-height:40vh; */
+    margin:1rem;
+    padding:1rem;
+    background-color: #022350;
+    color:white;
+    text-align:center;
+}
+
+.value p span:nth-child(1){
+    color:#d47e0d;
+    font-weight:700;
+    font-size: 2rem;
+}
+.product-feature p:nth-child(1){
+    color:#d47e0d;
+    margin:1rem 0;
+}
+
+@media only screen and (min-width: 600px) {
+    .values{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: center;
+        align-items:center;
+    }
+    .value{
+        min-width:200px;
+        max-width:20vw
+    }
+    .product-features-container{
+        display: grid;
+        grid-template-areas: 
+        "feature1 feature2"
+        "feature1 feature3";
+      grid-template-rows: 2fr 2fr;
+      grid-template-columns:1fr 1fr;
+      gap: .5rem;
+    }
+    .product-feature{
+        /* width:40% */
+    }
+    .product-feature:first-child{
+        /* width:48%; */
+        height:100%;
+        grid-area:feature1;
+    }
+    .product-feature:nth-child(2){
+       /* display:red; */
+        grid-area:feature2;
+    }
+    .product-feature:nth-child(3){
+       
+        grid-area:feature3;
+    }
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .value{
+        width:15vw;
+    }
+
+    .main-product-container .left{
+        width:100%;
+    }
+
+  } 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .main-product-highlight-container{
+        flex-direction: row;
+    }
+  } 
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    .values-container{
+        position:relative;
+        top:7vh;
+    }
+  }
+
+ 
+
+@keyframes enterScreen{
+    from {
+        filter:opacity(0);
+        left:-5vw;
+    } to {
+        filter:opacity(1);
+        left:0;
+    }
+}
+
+@keyframes enterScreen2{
+    from {
+        filter:opacity(0);
+        left:-5vw !important;
+    } to {
+        filter:opacity(1);
+        left:10vw !important;
+    }
+}

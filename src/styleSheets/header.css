@@ -1,0 +1,155 @@
+:root{
+    --primary-font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    --secondary-font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    --tertiary-font-family:Rob-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serifoto;
+    --primary-color:#b50000;
+    --secondary-color:#ff7f00;
+}
+
+a{
+    text-decoration: none;
+}
+
+.hide{
+    display:none;
+}
+
+.show{
+    display:block;
+}
+
+header{
+    width:90vw;
+    max-height:10vh;
+    margin:auto;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.large-screen-header{
+    display:none;
+}
+
+.small-screen-header{
+    display:flex;
+}
+
+.primary-nav{
+    width:90vw;
+    margin:auto;
+    padding:2.5rem 0;
+    background-color:white;
+    position:absolute;
+    top:10vh;
+    z-index:500;
+}
+
+.primary-nav ul{
+    margin:auto;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+}
+
+.primary-nav ul li{
+    width:100%;
+    list-style-type: none;
+}
+
+.primary-nav ul li a{
+    width:100%;
+    display: flex;
+    justify-content:center;
+    margin:2rem 0;
+    font-family:var(--tertiary-font-family);
+    font-size:1.5rem;
+    font-weight:500;
+    color:#022350;
+}
+
+
+.primary-nav ul li a:active, .primary-nav ul li a:hover{
+    transform:scale(1.3);
+    color:#d47e0d;
+    animation: .2s all ease-in-out;
+}
+
+/* .active{
+    
+    color:var(--secondary-color);
+} */
+
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {
+    .example {background: red;}
+  }
+*/
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    /* body {background: green;} */
+    
+    header, .primary-nav{
+        width:70vw;
+    }
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    /* body {background: blue;} */
+
+    header{
+        padding:1rem 0;
+    }
+
+    .small-screen-header{
+        display:none;
+    }
+    .large-screen-header{
+        display:flex;
+    }
+
+    .primary-nav{
+        width:auto;
+        position:relative;
+        top:0;
+        margin:0;
+    }
+
+    .primary-nav ul{
+        flex-direction: row;
+    }
+
+    .primary-nav ul li{
+        width:fit-content;
+        padding:1rem;
+        margin:0 1rem;
+    }
+
+
+  } 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    /* body {background: orange;} */
+  } 
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    /* body {background: pink;} */
+  }
+
+  @keyframes revealNav{
+    0%{
+        opacity:100;
+    }
+    50%{
+        opacity:50;
+    }
+    100%{
+        opacity:0;
+    }
+  }

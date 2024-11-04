@@ -1,0 +1,11 @@
+.contact-container{
+    margin:1rem;
+}
+
+.contact-details-container{
+    margin:2rem auto;
+}
+
+.contact-details-container p:nth-child(1){
+ margin:1rem 0;
+}
