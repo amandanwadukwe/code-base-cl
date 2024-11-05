@@ -54,10 +54,11 @@ export default function Footer( { logo } ){
                         <li><Link to="/contact" onClick={scrollToTop}>Contact Us</Link></li>
                         <li><Link to="/about" onClick={scrollToTop}>About Us</Link></li>
                         <li><Link to="/support" onClick={scrollToTop}>Support</Link></li>
+                        <li><a href="/AADA Ethical Licensing.pdf" download="/AADA Ethical Licensing.pdf">Ethical Licencing Policy</a></li>
                     </ul>
                 </div>
             </div>
-            <p>Copyright @ 2024. AADA. All rights reserved <br/> Reg Number: </p>
+            <p>Copyright @ 2024. AADA. All rights reserved</p>
         </footer>
     )
 }
