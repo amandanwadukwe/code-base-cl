@@ -1,0 +1,111 @@
+
+/* LoanProducts.css */
+
+.loan-products-container {
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.loan-products-container h1 {
+  font-size: 2rem;
+  color: #1a73e8;
+  margin-bottom: 2rem;
+}
+
+.loan-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.loan-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.loan-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.loan-card h2 {
+  font-size: 1.5rem;
+  color: #1a73e8;
+}
+
+.loan-card p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.loan-summary {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-out;
+}
+
+.loan-summary h2 {
+  font-size: 1.5rem;
+  color: #1a73e8;
+  margin-bottom: 1rem;
+}
+
+.loan-summary p {
+  font-size: 1rem;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+.continue-button, .abort-button {
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.continue-button {
+  background: #1a73e8;
+  color: #fff;
+  margin-right: 1rem;
+}
+
+.continue-button:hover {
+  background: #1558b8;
+}
+
+.abort-button {
+  background: #e53935;
+  color: #fff;
+}
+
+.abort-button:hover {
+  background: #c62828;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

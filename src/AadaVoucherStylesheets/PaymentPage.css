@@ -1,0 +1,56 @@
+/* PaymentPage.css */
+
+.payment-page-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-page-container h1 {
+    font-size: 1.8rem;
+    color: #1a73e8;
+    margin-bottom: 1.5rem;
+  }
+  
+  #payment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #payment-element {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  button#submit {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #1a73e8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button#submit:hover {
+    background-color: #1558b8;
+  }
+  
+  button#submit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  #payment-message {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #e53935;
+  }
+  

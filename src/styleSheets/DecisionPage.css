@@ -1,0 +1,117 @@
+/* Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  } */
+  
+  /* Container Styling */
+  .decision-container {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .decision-container h1 {
+    font-size: 1.8rem;
+    color: #1a73e8;
+    margin-bottom: 1.5rem;
+  }
+  
+  .decision-container label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    color: #555;
+    margin: 1rem 0 0.5rem;
+  }
+  
+  /* Input Styling */
+  .decision-container input[type="text"],
+  .decision-container input[type="email"] {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+  .decision-container input[type="text"]:focus,
+  .decision-container input[type="email"]:focus {
+    border-color: #1a73e8;
+  }
+  
+  /* Button Styling */
+  .decision-container button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 1rem 0.5rem 0;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .decision-container button:first-child {
+    background-color: #34a853;
+  }
+  
+  .decision-container button:last-child {
+    background-color: #ea4335;
+  }
+  
+  .decision-container button:hover {
+    transform: scale(1.05);
+  }
+  
+  .decision-container button:active {
+    transform: scale(1);
+  }
+  
+  .decision-container button:focus {
+    outline: none;
+  }
+  
+  /* Status Message Styling */
+  .status-message {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a73e8;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .decision-container {
+      padding: 1.5rem;
+    }
+  
+    .decision-container h1 {
+      font-size: 1.5rem;
+    }
+  
+    .decision-container button {
+      width: 100%;
+      margin: 1rem 0;
+    }
+  }
+  

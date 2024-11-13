@@ -19,6 +19,14 @@ import Footer from "./components/Footer";
 import Logo from "./resources/logo.svg";
 import Logo2 from "./resources/logo2.svg";
 import About from './components/About';
+import AadaVoucherDecisionApp from './AadaVoucherDecisionApp';
+import AadaVoucherApp from './AadaVoucherApp';
+import LoanProducts from './AadaVoucherComponents/LoanProducts';
+import LoanRequestPage from './AadaVoucherComponents/LoanRequestPage';
+import PaymentPage from './AadaVoucherComponents/PaymentPage';
+import ConfirmationPage from './AadaVoucherComponents/ConfirmationPage';
+import './AadaVoucherStylesheets/App.css';
+
 
 
 function App() {
@@ -80,7 +88,14 @@ function App() {
                 <Route path="/support" element={<Support isSupportRevealed={isSupportRevealed} componentToReveal={componentToReveal} />} />
                 <Route path="/products" element={<Products isProductRevealed={isProductRevealed} componentToReveal={componentToReveal} />} />
                 <Route path="/about" element={<About isAboutRevealed={isAboutRevealed} componentToReveal={componentToReveal} />} />
+                <Route path="/123456789" element={<AadaVoucherDecisionApp />} />
+                <Route path="/vouchers" element={<AadaVoucherApp />} />
+                <Route path="/voucher-products" element={<LoanProducts />} />
+                <Route path="/voucher-request" element={<LoanRequestPage />} />
+                <Route path="/payment" element={<PaymentPage />} />
+                <Route path="/confirmation" element={<ConfirmationPage />} />
                 <Route path="*" element={<div className="page-not-found"><p className="primary-header">Page not found</p></div>} />
+                
             </Routes>
             <Footer logo={Logo} />
         </Router>

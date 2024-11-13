@@ -35,6 +35,7 @@ export default function Footer( { logo } ){
                 <div className="footer-section">
                     <p><span>Products</span></p>
                     <ul>
+                    <li><Link to="/vouchers" onClick={scrollToTop}>Aada Vouchers</Link></li>
                         <li><a href="https://rememberjerjourney.com/" target='_blank'>Remember Her Journey</a></li>
                     </ul>
                 </div>
