@@ -1,18 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { createLoanRequest } from '../services/api';
+import { useSearchParams } from 'react-router-dom';
+import '../AadaVoucherStylesheets/ConfirmationPage.css'
 
 const ConfirmationPage = () => {
   const [status, setStatus] = useState('Loading...');
   const requestId = localStorage.getItem('requestId');
   const email = localStorage.getItem('email');
+  const [searchParams] = useSearchParams();
+
+  const sessionId = searchParams.get('session_id');
 
   useEffect(() => {
+
+    
     const updateRequestStatus = async () => {
       if (requestId && email) {
         try {
           const response = await axios.post('http://localhost:5000/api/request/update-status', {
             requestId,
             email,
+            checkoutSessionID : sessionId
           });
 
           if (response.status === 200) {

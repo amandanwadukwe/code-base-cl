@@ -39,7 +39,7 @@ const LoanRequestPage = () => {
       user: formData,
       loanAmount: selectedLoan.amount,
       interestRate: selectedLoan.interestRate,
-      totalRepayment: (selectedLoan.amount * Math.pow(1 + selectedLoan.interestRate / 100, 3)).toFixed(2),
+      totalRepayment: (selectedLoan.amount * Math.pow(1 + selectedLoan.interestRate / 100, 3)).toFixed(2)
     };
 
     try {

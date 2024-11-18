@@ -36,7 +36,13 @@ function App() {
   const [isProductRevealed, setIsProductRevealed] = useState(false);
   const [isSupportRevealed, setIsSupportRevealed] = useState(false);
   const [isAboutRevealed, setIsAboutRevealed] = useState(false);
+  const [paymentLink, setPaymentLink] = useState("");
 
+  function triggerSetPaymentLink(price){
+    setPaymentLink(price)
+  }
+
+  
   function componentToReveal(component){
     
     switch(component) {
@@ -86,13 +92,13 @@ function App() {
                 <Route path="/" element={<Hero isHomeRevealed={isHomeRevealed} componentToReveal={componentToReveal} />} />
                 <Route path="/contact" element={<Contact isContactRevealed={isContactRevealed} componentToReveal={componentToReveal} />} />
                 <Route path="/support" element={<Support isSupportRevealed={isSupportRevealed} componentToReveal={componentToReveal} />} />
-                <Route path="/products" element={<Products isProductRevealed={isProductRevealed} componentToReveal={componentToReveal} />} />
+                <Route path="/products" element={<Products isProductRevealed={isProductRevealed} componentToReveal={componentToReveal}  />} />
                 <Route path="/about" element={<About isAboutRevealed={isAboutRevealed} componentToReveal={componentToReveal} />} />
                 <Route path="/123456789" element={<AadaVoucherDecisionApp />} />
                 <Route path="/vouchers" element={<AadaVoucherApp />} />
-                <Route path="/voucher-products" element={<LoanProducts />} />
-                <Route path="/voucher-request" element={<LoanRequestPage />} />
-                <Route path="/payment" element={<PaymentPage />} />
+                <Route path="/voucher-products" element={<LoanProducts triggerSetPaymentLink={triggerSetPaymentLink} />} />
+                <Route path="/voucher-request" element={<LoanRequestPage  />} />
+                <Route path="/payment" element={<PaymentPage paymentLink={paymentLink} />} />
                 <Route path="/confirmation" element={<ConfirmationPage />} />
                 <Route path="*" element={<div className="page-not-found"><p className="primary-header">Page not found</p></div>} />
                 

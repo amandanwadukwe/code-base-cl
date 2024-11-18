@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../AadaVoucherStylesheets/LoanProducts.css';
+import Pound100 from '../resources/100.svg';
+import Pound50 from '../resources/50.svg';
+import Pound200 from '../resources/200.svg';
 
-const LoanProducts = () => {
+const LoanProducts = ( {triggerSetPaymentLink}) => {
   const [selectedLoan, setSelectedLoan] = useState(null);
   const navigate = useNavigate();
 
   const loanOptions = [
-    { amount: 50, interestRate: 4.12 },
-    { amount: 100, interestRate: 4.12 },
-    { amount: 200, interestRate: 4.12 },
+    {img:Pound50, amount: 56.44, interestRate: 4.12 },
+    { img:Pound100, amount:112.88, interestRate: 4.12 },
+    { img:Pound200, amount: 225.75, interestRate: 4.12 },
   ];
 
   const calculateTotalRepayment = (amount, interestRate) => {
@@ -22,12 +25,17 @@ const LoanProducts = () => {
 
   const handleContinue = () => {
     // Navigate to LoanRequestPage, passing selectedLoan data as state
+
+    triggerSetPaymentLink(selectedLoan.amount)
+    // console.log(selectedLoan.amount)
+
     navigate('/voucher-request', { state: { selectedLoan } });
   };
 
   return (
     <div className="loan-products-container">
-      <h1>Select Your Loan Amount</h1>
+      <h1>Select A Voucher!</h1>
+      <p>Hey, just a heads-up! If the voucher’s used to support a business and build their website, the 4.12% fee comes right back to you. If you go for the cash option instead, the fee stays with us. Fair enough, right?</p>
       <div className="loan-cards">
         {loanOptions.map((loan, index) => (
           <div
@@ -35,19 +43,20 @@ const LoanProducts = () => {
             className="loan-card"
             onClick={() => handleSelectLoan(loan)}
           >
+            <img src={loan.img} alt='' />
             <h2>£{loan.amount}</h2>
-            <p>Interest Rate: {loan.interestRate}%</p>
-            <p>Total Repayment: £{calculateTotalRepayment(loan.amount, loan.interestRate)}</p>
+            {/* <p>Interest Rate: {loan.interestRate}%</p>
+            <p>Total Repayment: £{calculateTotalRepayment(loan.amount, loan.interestRate)}</p> */}
           </div>
         ))}
       </div>
 
       {selectedLoan && (
         <div className="loan-summary">
-          <h2>Loan Summary</h2>
-          <p>Amount: £{selectedLoan.amount}</p>
-          <p>Interest Rate: {selectedLoan.interestRate}%</p>
-          <p>Total Repayment: £{calculateTotalRepayment(selectedLoan.amount, selectedLoan.interestRate)}</p>
+          <img src={selectedLoan.img} alt='' />
+          <h2>Voucher Summary</h2>
+          <p>Amount: £{calculateTotalRepayment(selectedLoan.amount, selectedLoan.interestRate)}</p>
+
           <button onClick={handleContinue} className="continue-button">
             Continue
           </button>

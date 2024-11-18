@@ -11,6 +11,9 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
+  .payment-page-container{
+    padding:4rem 0;
+  }
   .payment-page-container h1 {
     font-size: 1.8rem;
     color: #1a73e8;

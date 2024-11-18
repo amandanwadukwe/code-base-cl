@@ -26,7 +26,7 @@ export default function Contact({ isContactRevealed, componentToReveal }) {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('https://amandanwadukwe.a2hosted.com/aada-api-v2/contact', formData);
+      const response = await axios.post('http://localhost:5000/api/contact', formData);
       setStatusMessage(response.data.message);
       setFormData({
         firstName: '',
