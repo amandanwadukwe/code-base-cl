@@ -2,11 +2,11 @@
 /* LoanProducts.css */
 
 .loan-products-container {
-  font-family: 'Inter', sans-serif;
+  /* font-family: 'Inter', sans-serif; */
   text-align: center;
   padding: 2rem;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #ffffff;
+  color: #000;
 }
 
 .loan-products-container h1 {

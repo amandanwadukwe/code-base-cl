@@ -35,7 +35,7 @@ const LoanProducts = ( {triggerSetPaymentLink}) => {
   return (
     <div className="loan-products-container">
       <h1>Select A Voucher!</h1>
-      <p>Hey, just a heads-up! If the voucher’s used to support a business and build their website, the 4.12% fee comes right back to you. If you go for the cash option instead, the fee stays with us. Fair enough, right?</p>
+      <p>Please note, the 4.12% fee will be refunded if the voucher is used for a website. However, it will not be refunded if the voucher is redeemed for cash.</p>
       <div className="loan-cards">
         {loanOptions.map((loan, index) => (
           <div

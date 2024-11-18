@@ -2,12 +2,12 @@
 /* LoanRequestPage.css */
 
 .loan-request-container {
-  font-family: 'Inter', sans-serif;
+  /* font-family: 'Inter', sans-serif; */
   padding: 2rem;
   max-width: 600px;
   margin: 0 auto;
-  background: #f9f9f9;
-  color: #333;
+  background: #fff;
+  color: #000;
 }
 
 .loan-request-container h1 {
