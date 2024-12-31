@@ -6,9 +6,9 @@ import '../AadaVoucherStylesheets/HomePage.css';
 const HomePage = () => {
   return (
     <div className="homepage-container">
-      <div className="header">
+      <div className="header voucher-header">
         {/* <h1>Welcome to QuickCash</h1> */}
-        <p>Give the gift of growth—support a business you care about with a professional website.</p>
+        <p>Give the gift of growth, support a business you care about with a professional website.</p>
       </div>
 
       <section className="features">
@@ -22,7 +22,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <Link to="/voucher-products" className="get-started-button">Buy Now</Link>
+      <Link to="/voucher-products" className="get-started-button">Get Voucher</Link>
     </div>
   );
 };

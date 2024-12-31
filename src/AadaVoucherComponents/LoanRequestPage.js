@@ -7,7 +7,7 @@ const LoanRequestPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { selectedLoan } = location.state || {}; // Retrieve loan data passed from LoanProducts
-
+  const [ orderDetails, setOrderDetails] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,7 +16,7 @@ const LoanRequestPage = () => {
     postalCode: '',
     country: '',
     phone: '',
-    agreeToTerms: false,
+    agreeToTerms: false
   });
 
   const handleChange = (e) => {
@@ -39,7 +39,8 @@ const LoanRequestPage = () => {
       user: formData,
       loanAmount: selectedLoan.amount,
       interestRate: selectedLoan.interestRate,
-      totalRepayment: (selectedLoan.amount * Math.pow(1 + selectedLoan.interestRate / 100, 3)).toFixed(2)
+      totalRepayment: (selectedLoan.amount * Math.pow(1 + selectedLoan.interestRate / 100, 3)).toFixed(2),
+      orderDetails:orderDetails
     };
 
     try {
@@ -58,7 +59,7 @@ const LoanRequestPage = () => {
 
   return (
     <div className="loan-request-container">
-      <h1>Loan Request Form</h1>
+      <h1>Voucher Request Form</h1>
       <form className="loan-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Full Name</label>
@@ -83,6 +84,17 @@ const LoanRequestPage = () => {
           />
         </div>
         <div className="form-group">
+          <label htmlFor="orderDetails">Order Details</label>
+          <textarea
+            id="orderDetails"
+            name="orderDetails"
+            placeholder="Enter details of your request here. If you wish to instantly redeem your voucher, include the sort code, account number, and account holder name for the transfer. Leave blank to receive an email with your voucher details."
+            value={formData.orderDetails}
+            onChange={(e)=>setOrderDetails(e.target.value)}
+            required
+          ></textarea>
+        </div>
+        <div className="form-group">
           <label htmlFor="address">Billing Address</label>
           <input
             type="text"
@@ -93,7 +105,7 @@ const LoanRequestPage = () => {
             required
           />
         </div>
-        <div className="form-row">
+        {/* <div className="form-row"> */}
           <div className="form-group">
             <label htmlFor="city">City</label>
             <input
@@ -116,7 +128,7 @@ const LoanRequestPage = () => {
               required
             />
           </div>
-        </div>
+        {/* </div> */}
         <div className="form-group">
           <label htmlFor="country">Country</label>
           <input
@@ -152,7 +164,7 @@ const LoanRequestPage = () => {
             I confirm that the information provided is accurate and agree to the terms and conditions.
           </label>
         </div>
-        <button type="submit" className="submit-button">Submit Loan Request</button>
+        <button type="submit" className="submit-button">Submit Request</button>
       </form>
     </div>
   );

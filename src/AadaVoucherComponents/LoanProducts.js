@@ -10,9 +10,9 @@ const LoanProducts = ( {triggerSetPaymentLink}) => {
   const navigate = useNavigate();
 
   const loanOptions = [
-    {img:Pound50, amount: 56.44, interestRate: 4.12 },
-    { img:Pound100, amount:112.88, interestRate: 4.12 },
-    { img:Pound200, amount: 225.75, interestRate: 4.12 },
+    {img:Pound50, amount: 56.44, interestRate: 4.12,description:"Support someone’s dream with this £50 voucher. Help a loved one or local business take the first step toward building a professional website and growing their online presence.", title:"The Foundation Voucher"  },
+    { img:Pound100, amount:112.88, interestRate: 4.12, description:"Help a loved one or local business grow with this £100 voucher. It funds the creation of a professional website, giving them the tools to expand their reach and succeed online.", title:"The Momentum Voucher" },
+    { img:Pound200, amount: 225.75, interestRate: 4.12,description:"Empower someone special with this £200 voucher. Fund a complete professional website to help their business or project thrive and make a lasting impact online.", title:"The Transformation Voucher"  },
   ];
 
   const calculateTotalRepayment = (amount, interestRate) => {
@@ -35,7 +35,7 @@ const LoanProducts = ( {triggerSetPaymentLink}) => {
   return (
     <div className="loan-products-container">
       <h1>Select A Voucher!</h1>
-      <p>Please note, the 4.12% fee will be refunded if the voucher is used for a website. However, it will not be refunded if the voucher is redeemed for cash.</p>
+      <p>Each voucher includes a 4.12% deposit, refundable if redeemed for a website but non-refundable if redeemed for cash. Vouchers are valid for 1 year from the purchase date.</p>
       <div className="loan-cards">
         {loanOptions.map((loan, index) => (
           <div
@@ -54,9 +54,9 @@ const LoanProducts = ( {triggerSetPaymentLink}) => {
       {selectedLoan && (
         <div className="loan-summary">
           <img src={selectedLoan.img} alt='' />
-          <h2>Voucher Summary</h2>
+          <h2>{selectedLoan.title}</h2>
           <p>Amount: £{calculateTotalRepayment(selectedLoan.amount, selectedLoan.interestRate)}</p>
-
+          <p>{selectedLoan.description}</p>
           <button onClick={handleContinue} className="continue-button">
             Continue
           </button>
