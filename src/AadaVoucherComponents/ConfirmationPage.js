@@ -25,7 +25,7 @@ const ConfirmationPage = () => {
           });
 
           if (response.status === 200) {
-            setStatus('Thank you! Your loan request is pending approval.');
+            setStatus('Thank you! Your voucher request has been successful. We will be in touch soon!');
           } else {
             setStatus('There was an issue processing your request. Please try again.');
           }
