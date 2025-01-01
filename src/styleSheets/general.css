@@ -26,7 +26,8 @@ p{
 }
 
 .breadcrumb{
-    width:100vw;
+    width:100%;
+    text-align: left;
     font-weight:bold;
     color:#022350;
     margin:3rem 0;
@@ -165,8 +166,8 @@ input, textarea{
     justify-content: center;
     align-items:center;
   }
-  p{font-size:1.2rem;
-  line-height: 2rem;}
+  p{font-size:.9rem;
+  line-height: 1.6rem;}
 @media only screen and (min-width: 768px) {
 
  .container{

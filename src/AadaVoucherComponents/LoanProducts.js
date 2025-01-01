@@ -35,7 +35,7 @@ const LoanProducts = ( {triggerSetPaymentLink}) => {
   return (
     <div className="loan-products-container">
       <h1>Select A Voucher!</h1>
-      <p>Each voucher includes a 4.12% deposit, refundable if redeemed for a website but non-refundable if redeemed for cash. Vouchers are valid for 1 year from the purchase date.</p>
+      <p style={{fontSize:"10px", backgroundColor:"black", color:"white"}}>Each voucher includes a 4.12% deposit, refundable if redeemed for a website but non-refundable if redeemed for cash. Vouchers are valid for 1 year from the purchase date.</p>
       <div className="loan-cards">
         {loanOptions.map((loan, index) => (
           <div

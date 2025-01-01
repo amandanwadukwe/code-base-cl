@@ -143,6 +143,7 @@ img{
     margin:1rem 0;
 }
 
+
 @media only screen and (min-width: 600px) {
     .values{
         display:flex;
@@ -163,6 +164,7 @@ img{
       grid-template-columns:1fr 1fr;
       gap: .5rem;
     }
+   
     .product-feature{
         /* width:40% */
     }
@@ -193,6 +195,22 @@ img{
 
     .main-product-container .left{
         width:100%;
+    }
+    .product-features-container-2{
+        display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+    }
+
+    .product-features-container-2 p{
+        font-size: .8rem;
+        line-height: 1.3rem;
+        margin:.5rem;
+    }
+
+    .product-features-container-2 .tertiary-header{
+        margin:0;
     }
 
   } 
