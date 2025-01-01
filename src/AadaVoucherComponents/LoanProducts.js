@@ -44,6 +44,7 @@ const LoanProducts = ( {triggerSetPaymentLink}) => {
             onClick={() => handleSelectLoan(loan)}
           >
             <img src={loan.img} alt='' />
+            <p>{loan.title}</p>
             <h2>£{loan.amount}</h2>
             {/* <p>Interest Rate: {loan.interestRate}%</p>
             <p>Total Repayment: £{calculateTotalRepayment(loan.amount, loan.interestRate)}</p> */}
