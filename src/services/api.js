@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000/api/loans'; // Update as needed for your backend URL
+const API_BASE_URL = 'https://amandanwadukwe.a2hosted.com/aada-api-v2/loans/'; // Update as needed for your backend URL
 
-const PAYMENT_API_BASE_URL = 'http://localhost:5000/api/payment';
+const PAYMENT_API_BASE_URL = 'https://amandanwadukwe.a2hosted.com/aada-api-v2/payment';
 
-const REQUEST_API_BASE_URL = 'http://localhost:5000/api/request';
+const REQUEST_API_BASE_URL = 'https://amandanwadukwe.a2hosted.com/aada-api-v2/request';
 
 // Create a loan request
 export const createLoanRequest = async (loanData) => {
