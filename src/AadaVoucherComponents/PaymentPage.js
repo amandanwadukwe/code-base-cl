@@ -10,7 +10,7 @@ const PaymentPage = ( {paymentLink}) => {
   // console.log("paymentLink",paymentLink)
 
   const paymentLinks ={
-    "56.44":"https://buy.stripe.com/14kdTk0aD70F7dKdQS",
+    "56.44":"https://buy.stripe.com/28o8z08H94SxapW8ww",
     "112.88":"https://buy.stripe.com/3csbLc2iLgBf8hO3cf",
     "225.75":"https://buy.stripe.com/5kAbLcf5x98N9lS3cd"
   }
