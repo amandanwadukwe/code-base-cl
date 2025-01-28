@@ -7,6 +7,15 @@ p{
     font-size:1rem;
 }
 
+nav{
+}
+
+.call-to-action{
+  width:90vw;
+  margin:3rem 0;
+
+}
+
 
 input:focus { outline: none; }
 .container{
@@ -62,7 +71,9 @@ a:hover{
 .contact-container > *{
     width:80%;
 }
-
+button{
+  display:inline-block;
+}
 .primary-header{
   font-weight: 500;
   font-size: 2.9rem !important;
@@ -169,6 +180,10 @@ input, textarea{
   }
 
 @media only screen and (min-width: 768px) {
+  .call-to-action{
+    width:65vw;
+    
+  }
 
  .container{
   margin:1rem 5rem;

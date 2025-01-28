@@ -12,7 +12,9 @@ import { Link } from "react-router-dom";
 import aiIcon from "../resources/AI-icon.svg";
 import websiteIcon from "../resources/website-icon.svg";
 import voucherIcon from "../resources/voucher-icon.svg";
-import supportTimeline from "../resources/support-timeline.png"
+import supportTimeline from "../resources/support-timeline.png";
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Hero({ isHomeRevealed, componentToReveal }) {
 
@@ -27,6 +29,16 @@ export default function Hero({ isHomeRevealed, componentToReveal }) {
         });
     };
 
+    const navigate = useNavigate();
+
+    function goToContactUsPage(){
+        navigate('/contact');
+    };
+
+    function goToVoucherPage(){
+        navigate('/voucher');
+    };
+
 
 
     return (
@@ -38,23 +50,29 @@ export default function Hero({ isHomeRevealed, componentToReveal }) {
                 
                 <div className={`left reveal ${isHomeRevealed ? "active" : ""}`}>
                     <p className="primary-header">Discover What Tech Can Do When It’s Built for You.</p>
-                    <p className="secondary-text">Too often, the power of technology feels out of reach for those who deserve it most. We’re here to change that—designing AI-powered websites that prioritize your mission, amplify your voice, and meet your unique needs. Our goal is to empower you with tools that don’t just work for others, but are built to serve you. Together, let’s uncover the possibilities of what tech can do when it’s made with purpose.</p>
+                    <p className="secondary-text">Too often, the power of technology feels out of reach for those who deserve it most. We’re here to change that, designing AI-powered websites that prioritize your mission, amplify your voice, and meet your unique needs. Our goal is to empower you with tools that don’t just work for others, but are built to serve you. Together, let’s uncover the possibilities of what tech can do when it’s made with purpose.</p>
                 </div>
                 <div className={`right reveal ${isHomeRevealed ? "active" : ""}`}>
                     <img src={hero160125} alt="" />
                    
                 </div>
             </div>
-
+                
             <div className="service-list">
                         <div className="service-list-item"><img src={aiIcon} alt="" /><div><span><strong>Bespoke AI-Powered Website</strong></span><p>Cutting-edge tools that are tailor made specifically to server you and your clients.</p> </div></div>
                         <div className="service-list-item"><img src={websiteIcon} alt="" /><div><span><strong>Website Dev Classes</strong></span><p>Empowering the next generation of web developers with essential skills for building impactful digital products.</p></div></div>
                         <div className="service-list-item"><img src={voucherIcon} alt="" /><div><span><strong>Vouchers</strong></span><p>Empower local dreams by gifting a voucher to a charity, family member, friend, or community business.</p></div></div>
                     </div>
+                    <div className="call-to-action">
+                    <p className="secondary-header">We’d love to hear all about what you do!</p>
+                    <p>Contact us today to explore how we can create solutions designed for you, your goals, and the people you serve. Let’s turn possibilities into impact together.</p>
+                    <button className="tertiary-btn" onClick={goToContactUsPage}>Contact Us</button>
+                </div>
 
                     <div className="voucher-container">
                     <div className="voucher-progress-bar">
-                        <p className="primary-header">We've raised £20!</p>
+                        <p className="primary-header">Support a Charity</p>
+                        <p className="secondary-header">We've raised £20!</p>
                         <div className="voucher-progress-bar-outer">
                             <div className="voucher-progress-bar-inner" ></div>
 
@@ -66,11 +84,14 @@ export default function Hero({ isHomeRevealed, componentToReveal }) {
                         {/* <p className="tertiary-header">Your Voucher, Your Impact. Enjoy Flexibility and Support a Cause Today</p> */}
                         <p>Every time you redeem a voucher, you're not just unlocking benefits for yourself, you're fueling change. Half of the cost empowers charities with the tools they need to thrive in the digital space and the other half keeps our system running smoothly.</p>
                         <p>Get Your Voucher Now and Start Making an Impact!</p>
-                        <div className="voucher-action-buttons"><button className="tertiary-btn">Contact Us</button><button className="secondary-btn">Get Voucher </button></div>
+                        
+                            <div className="button-container"> <button className="tertiary-btn" onClick={goToContactUsPage}>Contact Us</button><button className="secondary-btn" onClick={goToVoucherPage}>Get Voucher </button></div>
+                      
                         
                     </div>
                     </div>
                     <div className="values-container">
+                        <p className="primary-header">Our Mission</p>
                 <p>We believe that the best technology is built on three pillars: exceptional code, rigorous process, and a relentless focus on generating value. We don’t just write code; we craft it with passion, precision, and purpose. Our team is committed to delivering software that not only meets your needs today but is ready to adapt for tomorrow.</p>
                 <div className="values">
                     <div className="value">

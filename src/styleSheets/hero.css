@@ -28,9 +28,12 @@
 
 .voucher-container{
     width:90vw;
+    text-align: left;
     background-color:#D4D4D8;
     border-radius: 1vmax;
     margin:2rem;
+    padding-top:2rem;
+    padding-bottom:3rem;
         display:flex;
     flex-direction: column;
     justify-content: center;
@@ -200,7 +203,15 @@
     left:0; */
 }
 
+.button-container{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
 
+}
+.button-container button{
+    width:40%;
+}
 
 .hero-image-2{
     /* background-color: green; */
@@ -252,7 +263,7 @@ img{
 .value img{
     width: 100%;
     max-width:200px;
-    max-height: 22vh;
+    max-height: 16vh;
     margin: auto;
 }
 
@@ -318,7 +329,7 @@ img{
         width:70vw;
     }
     .voucher-container{
-        width:65vw;
+        width:70vw;
     }
     .voucher-container *{
         width:70%;
