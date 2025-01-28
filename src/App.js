@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import "./styleSheets/general.css";
 import "./styleSheets/hero.css";
@@ -37,6 +37,15 @@ function App() {
   const [isSupportRevealed, setIsSupportRevealed] = useState(false);
   const [isAboutRevealed, setIsAboutRevealed] = useState(false);
   const [paymentLink, setPaymentLink] = useState("");
+
+  // useEffect(() => {
+  //   document.body.style.overflow = 'hidden'; // Disable scrolling
+  //   const timer = setTimeout(() => {
+  //     document.body.style.overflow = 'auto'; // Re-enable scrolling after 10 minutes
+  //   }, 600000); // 10 minutes in milliseconds
+
+  //   return () => clearTimeout(timer); // Clean up the timeout on component unmount
+  // }, []);
 
   function triggerSetPaymentLink(price){
     setPaymentLink(price)

@@ -84,7 +84,7 @@ export default function Contact({ isContactRevealed, componentToReveal }) {
           <label className={`reveal ${isContactRevealed ? "active" : ""}`}>
             Message <span>*</span><br />
             <textarea name="message" placeholder="Enter Your Message" value={formData.message} onChange={handleChange} required></textarea>
-          </label>
+          </label><br />
           <button className="primary-btn" type="button" onClick={handleSubmit}>Send</button>
         </div>
       </form>

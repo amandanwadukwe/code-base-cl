@@ -16,29 +16,31 @@ export default function Products({ isProductRevealed, componentToReveal }) {
 
 
     const [showProductDetails, setShowProductDetails] = useState(false);
+    const [activeProductIndex, setActiveProductIndex] = useState(0);
     const products = [{
         "name": "Remember Her Journey",
-        "description": ["A movement towards inclusivity, where technology and tradition meet to create something truly unique. By aiming normalizing indeginous designs.", "We were able to leverage Indigenous patterns as foundational elements in a modern, responsive UI framework, inspiring us to create a comprehensive digital archive of these designs, complete with contextual information and downloadable resources. Additionally, we are currently developing and integrating an API that enables developers to embed authentic Indigenous designs across various digital platforms."],
+        "description": ["Remember Her Journey honors Black female heroes by celebrating both their celebrated and unsung achievements and acts of heroism, ensuring their legacy is remembered and shared. It is our first product in our movement towards inclusivity, where technology and tradition meet to create something truly unique.  The project has inspired us to create a comprehensive digital archive of these designs, complete with contextual information, downloadable resources and ethical licensing.  By normalizing Indigenous designs, we aim to enrich digital spaces with cultural depth whilst ensuring the communities where these designs originate are duly recognised."],
         "highlightedResource": {
             "name": "ethical licensing document",
             "link": ""
         },
         "link": "https://rememberjerjourney.com/",
+        "type":"product",
         "mainImage": RHJ,
         "wireframeImage": RHJWireframe,
-        "feautures": [{ "title": "Culturally-Inclusive Design System", "description": "Indigenous patterns as foundational elements in a modern, responsive UI framework. This has inspired us to create a comprehensive digital archive of these designs, complete with contextual information, downloadable resources and ethical licensing. " }, { "title": "Parallax Pattern Scrolling", "description": "Parallax effects that seamlessly blend the pattern with modern web elements as users scroll." }, { "title": "Live Chat Integration", "description": "Custom real-time, AI-powered chatbots for instant customer support and enhanced user interactions." }]
+        "feautures": [{ "title": "Culturally-Inclusive Design System", "description": "Indigenous patterns as foundational elements in a modern, responsive UI framework." }, { "title": "Parallax Pattern Scrolling", "description": "Parallax effects that seamlessly blend the pattern with modern web elements as users scroll." }, { "title": "Live Chat Integration", "description": "Custom real-time, AI-powered chatbots for instant customer support and enhanced user interactions." }]
     }]
     return (
         <div className=" container">
             <p className={`primary-header reveal ${isProductRevealed ? "active" : ""}`}>Products</p>
             <div className="products">
-            {products.map(product => {
+            {products.map((product,index) => {
                 return <div className="product-container">
-                    <div className={`product ${showProductDetails ? 'hide':'show'}`} onClick={()=>setShowProductDetails(true)}>
+                    <div className={`product ${showProductDetails ? 'hide':'show'}`} onClick={()=>{setShowProductDetails(true);setActiveProductIndex(index)}}>
                         <img className={`reveal ${isProductRevealed ? "active" : ""}`} src={product.mainImage} alt={product.name} />
                         <p className={`tertiary-header reveal ${isProductRevealed ? "active" : ""}`} style={{ color: "black" }}>{product.name}</p>
                     </div>
-                    <div className={`product-details ${showProductDetails ? 'show':'hide'}`}>
+                    <div className={`product-details ${showProductDetails && index==activeProductIndex  ? 'show':'hide'}`}>
                             <p className="breadcrumb"><span onClick={()=>setShowProductDetails(false)}>Products</span> <FontAwesomeIcon icon={faChevronRight} /> {product.name}</p><br></br>
                         <p className="primary-header">{product.name}</p>
                         <div className="product-overview">

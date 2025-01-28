@@ -4,10 +4,11 @@
 p{
     line-height: 1.5rem;
     margin-bottom:2rem;
+    font-size:1rem;
 }
 
 
-
+input:focus { outline: none; }
 .container{
      margin:1rem;
     padding:3rem 1rem;
@@ -63,16 +64,16 @@ a:hover{
 }
 
 .primary-header{
-    font-weight:700;
-    font-size:2.5rem;
-    color:#022350;
+  font-weight: 500;
+  font-size: 2.9rem !important;
+    color:#022350 !important;
     cursor: default;
-    line-height: 2rem;
+    line-height: 3rem;
 }
 
 .secondary-header{
     font-weight:700;
-    font-size:2rem;
+    font-size:1.2rem;
     margin:1rem 0;
     cursor: default;
     line-height: 2rem;
@@ -166,8 +167,7 @@ input, textarea{
     justify-content: center;
     align-items:center;
   }
-  p{font-size:.9rem;
-  line-height: 1.6rem;}
+
 @media only screen and (min-width: 768px) {
 
  .container{

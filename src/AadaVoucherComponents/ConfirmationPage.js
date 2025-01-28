@@ -18,7 +18,7 @@ const ConfirmationPage = () => {
     const updateRequestStatus = async () => {
       if (requestId && email) {
         try {
-          const response = await axios.post('http://localhost:5000/api/request/update-status', {
+          const response = await axios.post('hhttps://amandanwadukwe.a2hosted.com/aada-api-v2/request/update-status', {
             requestId,
             email,
             checkoutSessionID : sessionId
@@ -44,7 +44,7 @@ const ConfirmationPage = () => {
   return (
     <div className="confirmation-page-container">
       <h1>{status}</h1>
-      <p>We’ve updated the status of your request.</p>
+      {/* <p>We’ve updated the status of your request.</p> */}
     </div>
   );
 };

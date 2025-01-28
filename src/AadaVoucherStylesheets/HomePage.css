@@ -1,6 +1,25 @@
 
 /* HomePage.css */
 .voucher-header{
+  background-image: url('../resources/charity_bg.jpg');
+  background-size: cover;
+  padding:1rem;
+}
+/* .voucher-header p:first-child{
+  font-weight: 500;
+  font-size: 2.9rem;
+    color:#022350;
+    cursor: default;
+    line-height: 3rem;
+    
+} */
+.voucher-header p{
+  background-color: rgba(255, 255, 255, 0.8);
+  padding:3rem;
+  color:black;
+  border-radius:1vmax;
+}
+/* .voucher-header{
   height:40vh;
   background-image: url('../resources/charity_bg.jpg');
   background-size: cover;
@@ -14,6 +33,13 @@
   padding:.5rem;
   background-color: rgba(0, 0, 0, 0.5);
   color:#ffffff !important;
+} */
+.primary-header{
+  font-weight: 500;
+  font-size: 2.9rem;
+    color:#022350;
+    cursor: default;
+    line-height: 3rem;
 }
 .homepage-container {
   font-family: 'Inter', sans-serif;
@@ -21,6 +47,10 @@
   padding: 2rem;
   color: #000;
 }
+/* .secondary-btn{
+  display:block;
+  margin-left:80vw;
+} */
 
 .header {
   margin: 2.5rem 0;
@@ -31,44 +61,18 @@
   color: #1a73e8;
 }
 
-.header p {
+/* .header p {
   font-size: 1.25rem;
   color: #555;
+} */
+
+
+.service-list-item{
+  width:350px;
+  margin-bottom:5rem;
 }
 
-.features {
-  max-width:700px;
-  display: flex;
-
-  justify-content: center;
-  align-items:center;
-  gap: 1.5rem;
-  margin: 2rem auto;
-}
-
-.feature {
-  background: #fff;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.feature:hover {
-  transform: scale(1.05);
-}
-
-.feature h2 {
-  font-size: 1.5rem;
-  color: #1a73e8;
-}
-
-.feature p {
-  color: #666;
-  font-size: 1rem;
-}
-
-.get-started-button {
+/* .get-started-button {
   display: inline-block;
   padding: 0.75rem 2rem;
   background-color: #000000;
@@ -78,11 +82,11 @@
   font-size: 1.25rem;
   text-decoration: none;
   transition: background-color 0.3s ease;
-}
+} */
 
-.get-started-button:hover {
+/* .get-started-button:hover {
   background-color: #000000;
-}
+} */
 @media (max-width: 600px) {
 .features{
   flex-direction: column;

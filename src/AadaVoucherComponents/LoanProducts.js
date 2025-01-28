@@ -4,6 +4,7 @@ import '../AadaVoucherStylesheets/LoanProducts.css';
 import Pound100 from '../resources/100.svg';
 import Pound50 from '../resources/50.svg';
 import Pound200 from '../resources/200.svg';
+import '../styleSheets/general.css';
 
 const LoanProducts = ( {triggerSetPaymentLink}) => {
   const [selectedLoan, setSelectedLoan] = useState(null);
@@ -34,7 +35,7 @@ const LoanProducts = ( {triggerSetPaymentLink}) => {
 
   return (
     <div className="loan-products-container">
-      <h1>Select A Voucher!</h1>
+      {/* <h1>Select A Voucher!</h1> */}
       <p style={{fontSize:"10px", backgroundColor:"black", color:"white"}}>Each voucher includes a 4.12% deposit, refundable if redeemed for a website but non-refundable if redeemed for cash. Vouchers are valid for 1 year from the purchase date.</p>
       <div className="loan-cards">
         {loanOptions.map((loan, index) => (
@@ -44,8 +45,9 @@ const LoanProducts = ( {triggerSetPaymentLink}) => {
             onClick={() => handleSelectLoan(loan)}
           >
             <img src={loan.img} alt='' />
+            <p><strong>£{loan.amount}</strong></p>
             <p>{loan.title}</p>
-            <h2>£{loan.amount}</h2>
+            
             {/* <p>Interest Rate: {loan.interestRate}%</p>
             <p>Total Repayment: £{calculateTotalRepayment(loan.amount, loan.interestRate)}</p> */}
           </div>
@@ -55,15 +57,19 @@ const LoanProducts = ( {triggerSetPaymentLink}) => {
       {selectedLoan && (
         <div className="loan-summary">
           <img src={selectedLoan.img} alt='' />
-          <h2>{selectedLoan.title}</h2>
-          <p>Amount: £{calculateTotalRepayment(selectedLoan.amount, selectedLoan.interestRate)}</p>
+          <div>
+          <p className="primary-header">{selectedLoan.title}</p>
+         
           <p>{selectedLoan.description}</p>
-          <button onClick={handleContinue} className="continue-button">
-            Continue
-          </button>
-          <button onClick={() => setSelectedLoan(null)} className="abort-button">
+          <p><strong>£{calculateTotalRepayment(selectedLoan.amount, selectedLoan.interestRate)}</strong></p>
+          <button className="tertiary-btn" style={{background:"red",color:"white",border:"none"}} onClick={() => setSelectedLoan(null)} >
             Cancel
           </button>
+          <button onClick={handleContinue} className="secondary-btn" >
+            Continue
+          </button>
+          
+          </div>
         </div>
       )}
     </div>

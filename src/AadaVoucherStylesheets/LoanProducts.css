@@ -1,6 +1,7 @@
 
 /* LoanProducts.css */
 
+
 .loan-products-container {
   font-family: 'Inter', sans-serif;
   text-align: center;
@@ -9,6 +10,7 @@
   color: #000;
   position:relative;
   bottom:9vh;
+  margin:5rem 0;
 }
 
 .loan-products-container h1 {
@@ -36,6 +38,10 @@
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.loan-card img{
+  height:250px;
+
+}
 
 .loan-card:hover {
   transform: scale(1.05);
@@ -48,19 +54,25 @@
 }
 
 .loan-card p {
-  color: #666;
+  color: #000000;
   font-size: 1rem;
   margin: 0.5rem 0;
+  text-align: left;
 }
+
 
 .loan-summary {
   background: #ffffff;
   border-radius: 10px;
   padding: 2rem;
-  max-width: 500px;
+  width: auto;
   margin: 0 auto;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   animation: slideIn 0.3s ease-out;
+  display:flex;
+  margin-top:6rem;
+  margin-left:2rem;
+  margin-right:2rem;
 }
 
 .loan-summary h2 {
@@ -69,10 +81,15 @@
   margin-bottom: 1rem;
 }
 
+.loan-summary img{
+  width:50%;
+}
+
 .loan-summary p {
   font-size: 1rem;
-  color: #333;
+  color: #000000;
   margin: 0.5rem 0;
+  text-align:left;padding: 0 3rem ;
 }
 
 .continue-button, .abort-button {
@@ -103,9 +120,18 @@
   background: #c62828;
 }
 
+
+
 @media (max-width: 600px) {
   .loan-cards{
     flex-direction: column;
+  }
+}
+
+@media (min-width: 900px) {
+  .loan-summary{
+    width:60vw;
+    margin: auto;
   }
 }
 

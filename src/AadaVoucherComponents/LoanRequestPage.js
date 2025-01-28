@@ -1,30 +1,50 @@
-import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { createLoanRequest } from '../services/api';
-import '../AadaVoucherStylesheets/LoanRequestPage.css';
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { createLoanRequest } from "../services/api";
+import BankDetailsPopup from "./BankDetailsPopup";
+import "../AadaVoucherStylesheets/LoanRequestPage.css";
+import { v4 as generateUUID } from 'uuid';
+const newUUID = generateUUID();
+
+
 
 const LoanRequestPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { selectedLoan } = location.state || {}; // Retrieve loan data passed from LoanProducts
-  const [ orderDetails, setOrderDetails] = useState('');
+  const [orderDetails, setOrderDetails] = useState("");
+  const uuid = newUUID;
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    address: '',
-    city: '',
-    postalCode: '',
-    country: '',
-    phone: '',
-    agreeToTerms: false
+    name: "",
+    email: "",
+    address: "",
+    city: "",
+    postalCode: "",
+    country: "",
+    phone: "",
+    agreeToTerms: false,
   });
+
+  const [isBankDetailsPopupOpen, setIsBankDetailsPopupOpen] = useState(false);
+  const [bankDetails, setBankDetails] = useState(null);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     });
+  };
+
+  const handleOpenBankDetailsPopup = () => {
+    setIsBankDetailsPopupOpen(true);
+  };
+
+  const handleCloseBankDetailsPopup = (details) => {
+    setIsBankDetailsPopupOpen(false);
+    if (details) {
+      setBankDetails({...details, ...{uuid:uuid}}); // Save bank details after submission
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -35,12 +55,22 @@ const LoanRequestPage = () => {
       return;
     }
 
+    if (!bankDetails) {
+      alert("Please provide your bank details before submitting.");
+      handleOpenBankDetailsPopup();
+      return;
+    }
+
     const loanData = {
       user: formData,
       loanAmount: selectedLoan.amount,
       interestRate: selectedLoan.interestRate,
-      totalRepayment: (selectedLoan.amount * Math.pow(1 + selectedLoan.interestRate / 100, 3)).toFixed(2),
-      orderDetails:orderDetails
+      totalRepayment: (
+        selectedLoan.amount *
+        Math.pow(1 + selectedLoan.interestRate / 100, 3)
+      ).toFixed(2),
+      orderDetails ,
+      bankDetails, // Include bank details in the loan data
     };
 
     try {
@@ -50,7 +80,7 @@ const LoanRequestPage = () => {
       const requestId = response.loanRequest._id;
 
       // Navigate to PaymentPage with requestId and email after creating the loan request
-      navigate('/payment', { state: { requestId, email: formData.email } });
+      // navigate("/payment", { state: { requestId, email: formData.email } });
     } catch (error) {
       console.error("Failed to submit loan request:", error);
       alert("Failed to submit loan request. Please try again.");
@@ -88,9 +118,9 @@ const LoanRequestPage = () => {
           <textarea
             id="orderDetails"
             name="orderDetails"
-            placeholder="Enter details of your request here. If you wish to instantly redeem your voucher, include the sort code, account number, and account holder name for the transfer. Leave blank to receive an email with your voucher details."
-            value={formData.orderDetails}
-            onChange={(e)=>setOrderDetails(e.target.value)}
+            placeholder="Enter details of your request here. Include the sort code, account number, and account holder name for the transfer."
+            value={orderDetails + uuid}
+            onChange={(e) => setOrderDetails(e.target.value)}
             required
           ></textarea>
         </div>
@@ -105,30 +135,28 @@ const LoanRequestPage = () => {
             required
           />
         </div>
-        {/* <div className="form-row"> */}
-          <div className="form-group">
-            <label htmlFor="city">City</label>
-            <input
-              type="text"
-              id="city"
-              name="city"
-              value={formData.city}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="postalCode">Postal Code</label>
-            <input
-              type="text"
-              id="postalCode"
-              name="postalCode"
-              value={formData.postalCode}
-              onChange={handleChange}
-              required
-            />
-          </div>
-        {/* </div> */}
+        <div className="form-group">
+          <label htmlFor="city">City</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            value={formData.city}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="postalCode">Postal Code</label>
+          <input
+            type="text"
+            id="postalCode"
+            name="postalCode"
+            value={formData.postalCode}
+            onChange={handleChange}
+            required
+          />
+        </div>
         <div className="form-group">
           <label htmlFor="country">Country</label>
           <input
@@ -161,11 +189,27 @@ const LoanRequestPage = () => {
             required
           />
           <label htmlFor="agreeToTerms">
-            I confirm that the information provided is accurate and agree to the terms and conditions.
+            I confirm that the information provided is accurate and agree to the
+            terms and conditions.
           </label>
         </div>
-        <button type="submit" className="submit-button">Submit Request</button>
+        <button
+          type="button"
+          className="submit-button"
+          onClick={handleOpenBankDetailsPopup}
+        >
+          Enter Bank Details
+        </button>
+        <button type="submit" className="submit-button">
+          Submit Request
+        </button>
       </form>
+
+      {/* Bank Details Popup */}
+      <BankDetailsPopup
+        isModalOpen={isBankDetailsPopupOpen}
+        onClose={handleCloseBankDetailsPopup}
+      />
     </div>
   );
 };
