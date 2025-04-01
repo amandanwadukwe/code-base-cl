@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+import LearnHub from './AadaVoucherComponents/LearnHub';
 import "./styleSheets/general.css";
 import "./styleSheets/hero.css";
 import "./styleSheets/contact.css";
@@ -25,6 +26,7 @@ import LoanProducts from './AadaVoucherComponents/LoanProducts';
 import LoanRequestPage from './AadaVoucherComponents/LoanRequestPage';
 import PaymentPage from './AadaVoucherComponents/PaymentPage';
 import ConfirmationPage from './AadaVoucherComponents/ConfirmationPage';
+import PlaygroundHub from './AadaVoucherComponents/PlaygroundHub';
 import './AadaVoucherStylesheets/App.css';
 
 
@@ -38,14 +40,6 @@ function App() {
   const [isAboutRevealed, setIsAboutRevealed] = useState(false);
   const [paymentLink, setPaymentLink] = useState("");
 
-  // useEffect(() => {
-  //   document.body.style.overflow = 'hidden'; // Disable scrolling
-  //   const timer = setTimeout(() => {
-  //     document.body.style.overflow = 'auto'; // Re-enable scrolling after 10 minutes
-  //   }, 600000); // 10 minutes in milliseconds
-
-  //   return () => clearTimeout(timer); // Clean up the timeout on component unmount
-  // }, []);
 
   function triggerSetPaymentLink(price){
     setPaymentLink(price)
@@ -110,7 +104,9 @@ function App() {
                 <Route path="/payment" element={<PaymentPage paymentLink={paymentLink} />} />
                 <Route path="/confirmation" element={<ConfirmationPage />} />
                 <Route path="*" element={<div className="page-not-found"><p className="primary-header">Page not found</p></div>} />
-                
+                <Route path="/learn" element={<div style={{ all: 'initial' }}><LearnHub isSupportRevealed={isSupportRevealed} componentToReveal={componentToReveal} /></div>} />
+                <Route path="/play" element={<div style={{ all: 'initial' }}><PlaygroundHub isSupportRevealed={isSupportRevealed} componentToReveal={componentToReveal} /></div>} />
+
             </Routes>
             <Footer logo={Logo} />
         </Router>
