@@ -8,9 +8,9 @@ const PlaygroundHub = () => {
   const projects = [
     {
         id: 'pass-the-mic',
-        title: 'AI Mic Challenge',
+        title: 'AI Pass the Mic Challenge',
         icon: <FaMicrophone className="project-icon" />,
-        description: 'Voice conversation passing between you and AI',
+        description: 'Deepseek vs Chatgpt, find out who wins this round',
         content: `
           <div class="mic-challenge">
             <style>
