@@ -26,6 +26,7 @@ function Header({ logo }) {
                     <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
                     <li><Link to="/learn" onClick={handleLinkClick}>Learn</Link></li>
                     <li><Link to="/play" onClick={handleLinkClick}>Play</Link></li>
+                    <li><Link to="/event" onClick={handleLinkClick}>Event</Link></li>
 
                         {/* <li><Link to="/products" onClick={handleLinkClick}>Products</Link></li> */}
                         <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>
@@ -49,6 +50,7 @@ function Header({ logo }) {
                     <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
                     <li><Link to="/learn" onClick={handleLinkClick}>Learn</Link></li>
                     <li><Link to="/play" onClick={handleLinkClick}>Play</Link></li>
+                    <li><Link to="/event" onClick={handleLinkClick}>Event</Link></li>
 
                         {/* <li><Link to="/products">Products</Link></li> */}
                         <li><Link to="/about">About</Link></li>

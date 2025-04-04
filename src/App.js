@@ -26,6 +26,7 @@ import LoanProducts from './AadaVoucherComponents/LoanProducts';
 import LoanRequestPage from './AadaVoucherComponents/LoanRequestPage';
 import PaymentPage from './AadaVoucherComponents/PaymentPage';
 import ConfirmationPage from './AadaVoucherComponents/ConfirmationPage';
+import EventHub from './AadaVoucherComponents/EventHub';
 import PlaygroundHub from './AadaVoucherComponents/PlaygroundHub';
 import './AadaVoucherStylesheets/App.css';
 
@@ -106,6 +107,7 @@ function App() {
                 <Route path="*" element={<div className="page-not-found"><p className="primary-header">Page not found</p></div>} />
                 <Route path="/learn" element={<div style={{ all: 'initial' }}><LearnHub isSupportRevealed={isSupportRevealed} componentToReveal={componentToReveal} /></div>} />
                 <Route path="/play" element={<div style={{ all: 'initial' }}><PlaygroundHub isSupportRevealed={isSupportRevealed} componentToReveal={componentToReveal} /></div>} />
+                <Route path="/event" element={<div style={{ all: 'initial' }}><EventHub isSupportRevealed={isSupportRevealed} componentToReveal={componentToReveal} /></div>} />
 
             </Routes>
             <Footer logo={Logo} />
