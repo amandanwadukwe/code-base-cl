@@ -96,8 +96,7 @@ export default function About({ isAboutRevealed, componentToReveal }) {
                     fontSize: "3rem",
                     fontWeight: 800,
                     marginBottom: "1.5rem",
-                    background:#022350
-            ,
+                    background:"#022350",
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
                     color: "transparent"
