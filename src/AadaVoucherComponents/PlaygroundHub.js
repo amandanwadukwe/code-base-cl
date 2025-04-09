@@ -424,9 +424,9 @@ const PlaygroundHub = () => {
 const styles = `
 .playground-hub {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --brand-dark: #4a2c82;
+  --brand-dark: #022350;
   --brand-light: #ffffff;
-  --accent: #8a5aeb;
+  --accent: #4A90E2;
   --gray: #f9f5ff;
   --dark-text: #2d3748;
   max-width: 1200px;

@@ -28,7 +28,7 @@ const EventHub = () => {
 
   return (
     <div className="event-hub">
-      <h1>Event Hub</h1>
+      
       <div className="event-card">
         <div className="event-image">
           <img src={event.image || '/default-event.jpg'} alt={event.title} />
