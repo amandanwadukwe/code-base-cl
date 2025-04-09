@@ -154,12 +154,12 @@ import { useNavigate } from 'react-router-dom';
 import hero160125 from "../resources/hero_16_01_25.png";
 import RHJ from "../resources/rememberHerJourney.png";
 import RHJWireframe from "../resources/rhj-wireframe.png";
-import code from "../resources/code.svg";
-import process from "../resources/process.svg";
-import value from "../resources/value.svg";
-import aiIcon from "../resources/AI-icon.svg";
-import websiteIcon from "../resources/website-icon.svg";
-import voucherIcon from "../resources/voucher-icon.svg";
+import code from "../resources/CodeUpdated.svg";
+import process from "../resources/ProcessUpdated.svg";
+import value from "../resources/ValueUpdated.svg";
+import aiIcon from "../resources/AIUpdated.svg";
+import websiteIcon from "../resources/ClassUpdated.svg";
+import voucherIcon from "../resources/VoucherUpdated.svg";
 import supportTimeline from "../resources/support-timeline.png";
 
 export default function Hero({ isHomeRevealed, componentToReveal }) {

@@ -10,7 +10,7 @@ export default function Support({ isSupportRevealed, componentToReveal }){
 
     return (
         <div className="support-container container">
-            <p className={`primary-header reveal ${isSupportRevealed ? "active" : ""}`}>Support</p>
+            {/* <p className={`primary-header reveal ${isSupportRevealed ? "active" : ""}`}>Support</p> */}
             <div>
                 <div>
                 <p className={`secondary-header reveal ${isSupportRevealed ? "active" : ""}`}>Join us on the journey to innovation</p>

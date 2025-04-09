@@ -92,7 +92,7 @@ export default function About({ isAboutRevealed, componentToReveal }) {
                 maxWidth: "1200px",
                 margin: "0 auto"
             }}>
-                <h1 className={`reveal ${isAboutRevealed ? "active" : ""}`} style={{
+                {/* <h1 className={`reveal ${isAboutRevealed ? "active" : ""}`} style={{
                     fontSize: "3rem",
                     fontWeight: 800,
                     marginBottom: "1.5rem",
@@ -102,7 +102,7 @@ export default function About({ isAboutRevealed, componentToReveal }) {
                     color: "transparent"
                 }}>
                     About Us
-                </h1>
+                </h1> */}
                 <h2 className={`reveal ${isAboutRevealed ? "active" : ""}`} style={{
                     fontSize: "2rem",
                     fontWeight: 600,

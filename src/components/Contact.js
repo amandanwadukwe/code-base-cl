@@ -45,7 +45,7 @@ export default function Contact({ isContactRevealed, componentToReveal }) {
 
   return (
     <div className="container">
-      <p className={`primary-header reveal ${isContactRevealed ? "active" : ""}`}>Contact Us</p>
+      {/* <p className={`primary-header reveal ${isContactRevealed ? "active" : ""}`}>Contact Us</p> */}
       <div>
         <p className={`secondary-header reveal ${isContactRevealed ? "active" : ""}`}>Let’s bring your vision to life</p>
         <div className="contact-details-container">
