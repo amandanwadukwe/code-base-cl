@@ -170,7 +170,7 @@ export default function Hero({ isHomeRevealed, componentToReveal }) {
     const navigate = useNavigate();
 
     const goToContactUsPage = () => navigate('/contact');
-    const goToVoucherPage = () => navigate('/voucher');
+    const goToVoucherPage = () => navigate('/vouchers');
 
     return (
         <div style={{
@@ -571,21 +571,24 @@ export default function Hero({ isHomeRevealed, componentToReveal }) {
                     <div style={{
                         display: "flex",
                         gap: "4rem",
+                        flexWrap:"wrap",
                         alignItems: "center",
                         marginBottom: "4rem"
                     }}>
-                        <div className={`reveal ${isHomeRevealed ? "active" : ""}`} style={{ flex: 1 }}>
+                        <div className={`reveal ${isHomeRevealed ? "active" : ""}`} style={{ flex: 1}}>
                             <img src={RHJ} alt="Remember Her Journey" style={{
                                 maxWidth: "100%",
+                                minWidth:"300px",
                                 borderRadius: "1rem",
                                 boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)"
                             }} />
                         </div>
-                        <div className={`reveal ${isHomeRevealed ? "active" : ""}`} style={{ flex: 1 }}>
+                        <div className={`reveal ${isHomeRevealed ? "active" : ""}`} style={{ flex: 1 , minWidth:"300px"}}>
                             <h3 style={{
                                 fontSize: "2rem",
                                 fontWeight: 700,
                                 marginBottom: "1.5rem",
+                             
                                 color: "#022350"
                             }}>Remember Her Journey</h3>
                             <p style={{
@@ -601,9 +604,10 @@ export default function Hero({ isHomeRevealed, componentToReveal }) {
                     <div style={{
                         display: "flex",
                         gap: "4rem",
-                        alignItems: "center"
+                        alignItems: "center",
+                        flexWrap: "wrap"
                     }}>
-                        <div style={{ flex: 1 }}>
+                        <div style={{ flex: 1 , minWidth:"300px"}}>
                             <div className={`reveal ${isHomeRevealed ? "active" : ""}`} style={{ marginBottom: "2rem" }}>
                                 <h4 style={{
                                     fontSize: "1.5rem",
@@ -656,6 +660,7 @@ export default function Hero({ isHomeRevealed, componentToReveal }) {
                         <div className={`reveal ${isHomeRevealed ? "active" : ""}`} style={{ flex: 1 }}>
                             <img src={RHJWireframe} alt="Product Wireframe" style={{
                                 maxWidth: "100%",
+                                minWidth:"300px",
                                 borderRadius: "1rem",
                                 boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)"
                             }} />
